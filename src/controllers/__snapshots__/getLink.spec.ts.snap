@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`getLink should respond error: data 1`] = `"{}"`;
+
+exports[`getLink should respond with success: data 1`] = `"{\\"url\\":\\"https://test.com/test1\\",\\"original\\":\\"https://example1.com\\"}"`;

@@ -1,0 +1,36 @@
+{
+  "name": "primarybid-test",
+  "version": "1.0.0",
+  "license": "MIT",
+  "scripts": {
+    "dev": "webpack --watch",
+    "dev:server": "nodemon --watch /data/dist/server.js dist/server.js",
+    "build": "rm -rf ./dist && webpack",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@types/copy-webpack-plugin": "^6.4.0",
+    "@types/express": "^4.17.11",
+    "@types/jest": "^26.0.20",
+    "@types/mongodb": "^3.6.7",
+    "@types/moxios": "^0.4.10",
+    "@types/node": "^14.14.28",
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "copy-webpack-plugin": "^7.0.0",
+    "express": "^4.17.1",
+    "jest": "^26.6.3",
+    "moxios": "^0.4.0",
+    "node-mocks-http": "^1.10.1",
+    "nodemon": "^2.0.7",
+    "prettier": "^2.2.1",
+    "ts-jest": "^26.5.1",
+    "ts-loader": "^8.0.17",
+    "typescript": "^4.1.5",
+    "webpack": "^5.22.0",
+    "webpack-cli": "^4.5.0"
+  },
+  "dependencies": {
+    "mongodb": "^3.6.4"
+  }
+}

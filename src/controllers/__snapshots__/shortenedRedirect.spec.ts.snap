@@ -1,0 +1,7 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`shortenedRedirect should redirect: headers 1`] = `
+Object {
+  "location": "https://example.com",
+}
+`;
