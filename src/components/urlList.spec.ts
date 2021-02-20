@@ -1,21 +1,26 @@
-import moxios from 'moxios';
+import { render } from '@testing-library/vue';
+import ShortUrlResponse from '../types/ShortUrlResponse';
 import UrlList from './urlList';
 
 describe('UrlList', () => {
-  beforeEach(() => {
-    moxios.install();
-  });
-
-  afterEach(() => {
-    moxios.uninstall();
-  });
-
   it('should render', () => {
-    moxios.stubRequest('api/', { status: 200, response: [] });
-    const element = document.createElement('div');
+    const result = render(UrlList);
 
-    new UrlList(element);
+    expect(result.container).toMatchSnapshot();
+  });
 
-    expect(element.innerHTML).toMatchSnapshot();
+  it('should render list', () => {
+    const result = render(UrlList, {
+      props: {
+        listing: [
+          {
+            url: 'https://example.com/asdf',
+            original: 'https://something.com/example/url',
+          },
+        ] as ShortUrlResponse[],
+      },
+    });
+
+    expect(result.container).toMatchSnapshot();
   });
 });

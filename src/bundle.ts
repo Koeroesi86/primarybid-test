@@ -1,7 +1,8 @@
-import App from './components/app';
+import Vue from 'vue';
+import './components/app';
 
 (() => {
   if (window) {
-    new App(document.getElementById('root'));
+    new Vue({ el: '#root' });
   }
 })();

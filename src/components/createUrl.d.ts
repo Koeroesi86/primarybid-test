@@ -1,10 +1,7 @@
-import Base from './base';
-export default class CreateUrl extends Base {
-    private readonly element;
-    private readonly urlInput;
-    private readonly button;
-    constructor(element: HTMLElement);
-    private submit;
-    private isValid;
-    refresh: () => void;
-}
+import Vue from 'vue';
+declare const _default: import("vue/types/vue").ExtendedVue<Vue, unknown, {
+    send(): void;
+}, unknown, {
+    onsend: Function;
+}>;
+export default _default;

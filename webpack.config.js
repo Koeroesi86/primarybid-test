@@ -4,7 +4,7 @@ const { EnvironmentPlugin } = require('webpack');
 
 module.exports = [
   {
-    mode: 'development',
+    mode: process.env.NODE_ENV || 'development',
     entry: {
       bundle: './src/bundle.ts',
     },
@@ -19,6 +19,9 @@ module.exports = [
     },
     resolve: {
       extensions: ['.tsx', '.ts', '.js', '.json'],
+      alias: {
+        vue: 'vue/dist/vue.esm.js',
+      },
     },
     target: 'web',
     output: {

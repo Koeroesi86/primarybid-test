@@ -1,6 +1,5 @@
-import Base from './base';
-export default class UrlList extends Base {
-    private element;
-    constructor(element: HTMLElement);
-    refresh(): Promise<void>;
-}
+import Vue from 'vue';
+declare const _default: import("vue/types/vue").ExtendedVue<Vue, unknown, unknown, unknown, {
+    listing: unknown[];
+}>;
+export default _default;

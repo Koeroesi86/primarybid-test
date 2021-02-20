@@ -1,11 +1,10 @@
+import { render } from '@testing-library/vue';
 import CreateUrl from './createUrl';
 
 describe('CreateUrl', () => {
   it('should render', () => {
-    const element = document.createElement('div');
+    const result = render(CreateUrl);
 
-    new CreateUrl(element);
-
-    expect(element.innerHTML).toMatchSnapshot();
+    expect(result.container).toMatchSnapshot();
   });
 });

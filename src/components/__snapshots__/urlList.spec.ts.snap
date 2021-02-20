@@ -1,3 +1,36 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`UrlList should render 1`] = `""`;
+exports[`UrlList should render 1`] = `
+<div>
+  <div
+    class="urlList"
+  >
+     
+    <span>
+      
+        No urls yet. Why not create one?
+      
+    </span>
+  </div>
+</div>
+`;
+
+exports[`UrlList should render list 1`] = `
+<div>
+  <div
+    class="urlList"
+  >
+    <a
+      href="https://example.com/asdf"
+      target="_blank"
+      title="https://something.com/example/url"
+    >
+      
+        https://example.com/asdf
+      
+    </a>
+     
+    <!---->
+  </div>
+</div>
+`;

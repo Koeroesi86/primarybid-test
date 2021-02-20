@@ -9,7 +9,8 @@ ENV \
     DB_PASSWORD=${DB_PASSWORD} \
     DB_NAME=${DB_NAME} \
     BASE_URL=${BASE_URL} \
-    PORT=${PORT}
+    PORT=${PORT} \
+    NODE_ENV=production
 
 RUN apk --no-cache add tini && \
     yarn install --frozen-lockfile && \

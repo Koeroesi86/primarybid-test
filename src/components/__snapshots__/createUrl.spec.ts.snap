@@ -1,10 +1,22 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`CreateUrl should render 1`] = `
-"
-      <input type=\\"url\\" placeholder=\\"Shorten some urls\\">
-      <button type=\\"button\\">
+<div>
+  <div
+    class="createUrl"
+  >
+    <input
+      placeholder="Shorten some urls"
+      type="url"
+    />
+     
+    <button
+      type="button"
+    >
+      
         Shorten
-      </button>
-    "
+      
+    </button>
+  </div>
+</div>
 `;

@@ -1,26 +1,37 @@
-import CreateUrl from './createUrl';
-import UrlList from './urlList';
-import Base from './base';
+import Vue from 'vue';
+import axios from 'axios';
+import './createUrl';
+import './urlList';
 
-export default class App extends Base {
-  constructor(element: HTMLElement) {
-    super(element);
-
-    element.innerHTML = `
-      <div class='layout'>
-        <h1>Primary Bid test</h1>
-        <div class='createUrl'></div>
-        <div class='urlList'></div>
-      </div>
-    `;
-
-    const createUrl = new CreateUrl(element.querySelector('.createUrl'));
-    const urlList = new UrlList(element.querySelector('.urlList'));
-
-    element.addEventListener('url-created', (e) => {
-      e.stopPropagation();
-      createUrl.refresh();
-      urlList.refresh();
-    });
-  }
-}
+export default Vue.component('app-view', {
+  template: `
+    <div class='layout'>
+      <h1>Primary Bid test</h1>
+      <create-url :onsend='shortUrl'></create-url>
+      <url-list :listing='listing'></url-list>
+    </div>
+  `,
+  data: () => ({
+    listing: [],
+  }),
+  async created() {
+    await this.refreshList();
+  },
+  methods: {
+    async refreshList() {
+      this.listing = await axios('api/').then((res) => res.data);
+    },
+    async shortUrl(url) {
+      await axios({
+        url: 'api/',
+        method: 'POST',
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+        data: { url },
+      });
+      await this.refreshList();
+    },
+  },
+});
