@@ -12,6 +12,8 @@ Technologies used:
 * HTML, CSS
 * Axios
 * Jest
+* Vue
+* Testing library
 
 ### Dependencies
 * [Docker](https://www.docker.com/products/docker-desktop)
